@@ -24,9 +24,10 @@
     <div>
       <h1>Know your <em>real</em> hourly rate.</h1>
       <p>Tasker HQ is a browser extension for people who do AI-training gig work. Track your time across every platform and see what you actually earn per hour, unpaid onboarding and per-task work included.</p>
-      <a class="btn primary" href="mailto:migueldelagarza100@gmail.com?subject=Tasker%20HQ%20early%20access">Get early access</a>
-      <a class="btn ghost" href="#pricing">See pricing</a>
-      <p class="note">For Chrome, Edge and Firefox. Store listings are on the way; email us and we'll send you the install link.</p>
+      <a class="btn primary" href="download/tasker-hq-0.2.1.xpi" id="firefox-download">Download for Firefox</a>
+      <a class="btn ghost" href="mailto:migueldelagarza100@gmail.com?subject=Tasker%20HQ%20early%20access%20(Chrome%2FEdge)">Chrome or Edge? Get notified</a>
+      <p class="note">Early-access Firefox build, signed by Mozilla. Open this page in Firefox and click the button, then choose <strong>Continue to installation</strong> and <strong>Add</strong>. Chrome and Edge versions are in store review; email us and we'll send you the link when they're live.</p>
+      <p class="note" id="not-firefox" hidden>You're not on Firefox, so this button will just download a file. Open this page in Firefox to install, or use “Get notified” for Chrome and Edge.</p>
     </div>
     <img class="popup-shot" src="images/popup-ui.jpg" alt="The Tasker HQ popup with a timer running on a per-task project" width="382" height="705">
   </div>
@@ -105,5 +106,8 @@
     <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:migueldelagarza100@gmail.com">Contact</a></span>
   </div>
 </footer>
+<script>
+  if (!/Firefox\//.test(navigator.userAgent)) document.getElementById('not-firefox').hidden = false;
+</script>
 </body>
 </html>
