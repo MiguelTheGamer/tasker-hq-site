@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasker HQ Privacy Policy</title>
+<meta name="description" content="How the Tasker HQ browser extension handles your data.">
+<style>
+  :root {
+    --bg: #ffffff; --text: #1f2330; --muted: #5b6070; --accent: #4f46e5; --rule: #e6e6ee; --callout: #f3f4ff;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111117; --text: #e9e9f0; --muted: #a0a3b1; --accent: #8b93ff; --rule: #2a2a35; --callout: #1b1b2a;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  header img { width: 40px; height: 40px; border-radius: 9px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0; }
+  h2 { font-size: 21px; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .meta { color: var(--muted); margin: 0 0 28px; }
+  .summary { background: var(--callout); border-radius: 12px; padding: 18px 22px; }
+  .summary ul { margin: 8px 0 0; padding-left: 20px; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--rule); }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+  @media (max-width: 560px) { table, thead, tbody, tr, th, td { display: block; } thead { display: none; } td { border: none; padding: 2px 0; } tr { border-bottom: 1px solid var(--rule); padding: 10px 0; } td:first-child { font-weight: 600; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <h1>Tasker HQ Privacy Policy</h1>
+  </header>
+  <p class="meta">Effective October 2, 2026</p>
+
+  <div class="summary">
+    <strong>The short version</strong>
+    <ul>
+      <li>Your projects, hours, earnings and notes stay in your browser. We never see them.</li>
+      <li>Tasker HQ has no access to the websites you work on (Alignerr, DataAnnotation, Outlier, Mercor or any other) and never reads or changes those pages.</li>
+      <li>If you buy Pro, payments go through ExtensionPay and Stripe. We never see your card number.</li>
+      <li>No analytics, no ads, no tracking, and we don't sell or share data.</li>
+    </ul>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>Tasker HQ is a browser extension that helps people who do AI-training gig work track their time and work out their real hourly rate. "We" means the developer of Tasker HQ. You can reach us at <a href="mailto:migueldelagarza100@gmail.com">migueldelagarza100@gmail.com</a>.</p>
+
+  <h2>Data stored on your device</h2>
+  <p>Everything you enter or track is saved with your browser's extension storage (<code>chrome.storage.local</code>) on your computer:</p>
+  <ul>
+    <li>platform and project names, pay types and rates</li>
+    <li>work sessions: start and end times, durations, task counts, notes and payout status</li>
+    <li>your settings, such as the idle timeout and the first day of your week</li>
+    <li>a cached copy of your Pro status, so Pro keeps working offline</li>
+    <li>the date you installed the extension, saved by the payment library in extension sync storage</li>
+  </ul>
+  <p>This data is never sent to us or anyone else. It stays until you delete it in the extension or uninstall the extension. You can export it any time (JSON backup, or CSV with Pro), and backups are files you save yourself.</p>
+
+  <h2>Idle detection</h2>
+  <p>To pause your timer when you step away, Tasker HQ uses the browser's <code>idle</code> permission. This only tells the extension whether your computer is active, idle or locked. It does not record keystrokes, mouse movements, the pages you visit or anything you type, and the idle state is never sent anywhere.</p>
+
+  <h2>Payments and Pro (ExtensionPay)</h2>
+  <p>Pro is sold through <a href="https://extensionpay.com">ExtensionPay</a>, which uses <a href="https://stripe.com">Stripe</a> to process payments.</p>
+  <ul>
+    <li><strong>If you never click "Upgrade to Pro" or "Log in"</strong>, the extension sends nothing about you to ExtensionPay. When you open the dashboard, it may load the current Pro price from ExtensionPay; that request contains no personal data.</li>
+    <li><strong>When you upgrade or log in</strong>, ExtensionPay creates a random identifier for your install. It is stored in your browser's extension sync storage (<code>chrome.storage.sync</code>), so if Chrome sync is on, it syncs with your Google account like other extension settings.</li>
+    <li>You enter your email and payment details on ExtensionPay's and Stripe's own pages, not in Tasker HQ. Tasker HQ never sees or stores your card number.</li>
+    <li>To check whether Pro is active, the extension sends that identifier to ExtensionPay every few hours and when it starts. ExtensionPay replies with your Pro status, plan, subscription status and the email on your account. The extension stores that reply only on your device and uses it only to turn Pro on or off and show your plan in Settings.</li>
+    <li>Tasker HQ includes a small script that runs only on extensionpay.com pages, so the extension can notice right away when a payment finishes. It doesn't run on any other site.</li>
+  </ul>
+  <p>ExtensionPay (<a href="https://extensionpay.com">extensionpay.com</a>) and Stripe handle your email and payment information under their own terms. See <a href="https://stripe.com/privacy">Stripe's privacy policy</a>.</p>
+
+  <h2>What we don't do</h2>
+  <ul>
+    <li>We don't collect or receive your tracking data.</li>
+    <li>We don't use analytics, crash reporting, advertising or tracking of any kind.</li>
+    <li>We don't sell, rent or share your data, and we don't use it for anything unrelated to the extension's single purpose of tracking your gig work.</li>
+    <li>We don't use or transfer your data to decide creditworthiness or for lending.</li>
+  </ul>
+  <p>Our use of information follows the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Permissions, explained</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Why Tasker HQ needs it</th></tr></thead>
+    <tbody>
+      <tr><td>storage</td><td>Saves your projects, sessions and settings on your device.</td></tr>
+      <tr><td>alarms</td><td>Updates the timer badge on the toolbar icon once a minute.</td></tr>
+      <tr><td>idle</td><td>Pauses the timer when you're away from your computer.</td></tr>
+      <tr><td>extensionpay.com</td><td>Notices when a Pro purchase or login finishes. Runs only on that site.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Delete your data:</strong> delete sessions or projects in the dashboard, or uninstall the extension to remove everything stored on your device.</li>
+    <li><strong>Cancel Pro:</strong> use "Manage subscription" in Settings.</li>
+    <li><strong>Delete payment records:</strong> contact us or ExtensionPay to ask for your account information to be deleted. Records needed for tax or legal reasons may be kept as the law requires.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Tasker HQ is meant for adults doing paid work and isn't directed at children under 13. We don't knowingly collect information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we change how Tasker HQ handles data, we'll update this page and the date at the top before the change takes effect. If a change means data leaves your device in a new way, we'll ask for your consent in the extension first.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or requests: <a href="mailto:migueldelagarza100@gmail.com">migueldelagarza100@gmail.com</a>.</p>
+</main>
+</body>
+</html>
