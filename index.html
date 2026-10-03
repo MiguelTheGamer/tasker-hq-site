@@ -4,27 +4,106 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tasker HQ</title>
-<meta name="description" content="Tasker HQ is a Chrome extension that tracks your real hourly rate across AI-training gigs.">
+<meta name="description" content="Tasker HQ is a browser extension that tracks your time and real hourly rate across AI-training gig platforms. Free for 2 platforms; Pro is $5/month.">
 <link rel="icon" href="icon.png">
-<style>
-  :root { --bg: #ffffff; --text: #1f2330; --muted: #5b6070; --accent: #4f46e5; color-scheme: light; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #111117; --text: #e9e9f0; --muted: #a0a3b1; --accent: #8b93ff; color-scheme: dark; }
-  }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 72px 16px; text-align: center; }
-  img { width: 72px; height: 72px; border-radius: 16px; }
-  h1 { font-size: 36px; margin: 16px 0 8px; }
-  p { color: var(--muted); margin: 0 0 24px; }
-  a { color: var(--accent); }
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
+<header class="wrap nav">
+  <a class="brand" href="./"><img src="icon.png" alt="">Tasker HQ</a>
+  <nav>
+    <a class="wide-only" href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a class="wide-only" href="#faq">FAQ</a>
+    <a href="mailto:migueldelagarza100@gmail.com">Contact</a>
+  </nav>
+</header>
+
 <main>
-  <img src="icon.png" alt="">
-  <h1>Tasker HQ</h1>
-  <p>A Chrome extension that tracks your real hourly rate across AI-training gigs.</p>
-  <p><a href="privacy.html">Privacy policy</a> · <a href="mailto:migueldelagarza100@gmail.com">Contact</a></p>
+  <div class="wrap hero">
+    <div>
+      <h1>Know your <em>real</em> hourly rate.</h1>
+      <p>Tasker HQ is a browser extension for people who do AI-training gig work. Track your time across every platform and see what you actually earn per hour, unpaid onboarding and per-task work included.</p>
+      <a class="btn primary" href="mailto:migueldelagarza100@gmail.com?subject=Tasker%20HQ%20early%20access">Get early access</a>
+      <a class="btn ghost" href="#pricing">See pricing</a>
+      <p class="note">For Chrome, Edge and Firefox. Store listings are on the way; email us and we'll send you the install link.</p>
+    </div>
+    <img class="popup-shot" src="images/popup-ui.jpg" alt="The Tasker HQ popup with a timer running on a per-task project" width="382" height="705">
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Everything you need to track gig work</h2>
+      <p class="lead">Works with Alignerr, DataAnnotation, Outlier, Mercor and any other platform. You add your own projects, so it works anywhere.</p>
+      <div class="features">
+        <div class="feature"><h3>One-click timer</h3><p>Start and stop per project, with live earnings and a toolbar badge.</p></div>
+        <div class="feature"><h3>Hourly, per-task or unpaid</h3><p>Count tasks with one click and log unpaid training and qualifications.</p></div>
+        <div class="feature"><h3>Your real rate</h3><p>Everything you earned ÷ every minute you worked, by platform and project.</p></div>
+        <div class="feature"><h3>Auto-pause</h3><p>Pauses when you step away and doesn't count time you weren't working.</p></div>
+        <div class="feature"><h3>Payout tracking</h3><p>See what each platform still owes you and mark payouts as received.</p></div>
+        <div class="feature"><h3>Private by design</h3><p>Never reads or touches the platforms' sites. Your data stays in your browser.</p></div>
+      </div>
+      <div class="shots" style="margin-top:24px">
+        <img src="images/dashboard.jpg" alt="Dashboard ranking projects by real hourly rate" width="1128" height="652" loading="lazy">
+        <img src="images/sessions.jpg" alt="Session history with payout status" width="1128" height="652" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p class="lead">Start free. Upgrade when you work on more than two platforms. Cancel any time.</p>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0</div>
+          <ul>
+            <li>Up to 2 platforms</li>
+            <li>Timer, task counter and auto-pause</li>
+            <li>Real hourly rate and payout tracking</li>
+            <li>JSON backup and restore</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <h3>Pro</h3>
+          <div class="price">$5 <small>/ month (USD)</small></div>
+          <ul>
+            <li>Everything in Free</li>
+            <li>Unlimited platforms</li>
+            <li>CSV export for taxes</li>
+            <li>Billed monthly; cancel any time in the extension</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Payments are processed securely by Stripe via ExtensionPay. See our <a href="terms.html">Terms</a> for billing, cancellation and refunds.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <dl class="faq">
+        <dt>Can using it get my platform account flagged?</dt>
+        <dd>Tasker HQ has no access to any gig platform's website. It doesn't read, scrape or automate their pages, so from the platform's side it's invisible, like using a stopwatch.</dd>
+        <dt>Where is my data stored?</dt>
+        <dd>In your browser, on your computer. We never receive your hours or earnings. See the <a href="privacy.html">privacy policy</a>.</dd>
+        <dt>How do I cancel Pro?</dt>
+        <dd>Open the dashboard, go to Settings, and click "Manage subscription". Pro stays active until the end of the period you paid for.</dd>
+        <dt>Is Tasker HQ affiliated with these platforms?</dt>
+        <dd>No. It's an independent tool and isn't endorsed by any of the platforms named on this page.</dd>
+        <dt>Need help?</dt>
+        <dd>Email <a href="mailto:migueldelagarza100@gmail.com">migueldelagarza100@gmail.com</a>. We usually reply within two business days.</dd>
+      </dl>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tasker HQ</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:migueldelagarza100@gmail.com">Contact</a></span>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,0 +1,77 @@
+:root {
+  --bg: #ffffff; --surface: #f6f6fb; --text: #1f2330; --muted: #5b6070; --accent: #4f46e5;
+  --accent-text: #ffffff; --rule: #e6e6ee; --good: #15803d;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111117; --surface: #1a1a24; --text: #e9e9f0; --muted: #a0a3b1; --accent: #8b93ff;
+    --accent-text: #111117; --rule: #2a2a35; --good: #4ade80;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; }
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
+.nav nav { display: flex; gap: 18px; font-size: 15px; }
+.nav nav a { color: var(--muted); text-decoration: none; }
+.nav nav a:hover { color: var(--text); }
+
+.hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding: 40px 16px 56px; }
+.hero .popup-shot { width: min(100%, 360px); justify-self: center; }
+.hero h1 { font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { color: var(--muted); font-size: 19px; margin: 0 0 24px; }
+.hero img { border-radius: 14px; box-shadow: 0 20px 50px rgba(20, 20, 60, .18); }
+.btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.btn.primary { background: var(--accent); color: var(--accent-text); }
+.btn.ghost { border: 1px solid var(--rule); color: var(--text); margin-left: 8px; }
+.note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.hero .note { font-size: 14px; margin: 14px 0 0; }
+
+section { padding: 48px 0; border-top: 1px solid var(--rule); }
+h2 { font-size: 30px; letter-spacing: -0.01em; margin: 0 0 8px; }
+.lead { color: var(--muted); margin: 0 0 28px; max-width: 640px; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feature { background: var(--surface); border-radius: 12px; padding: 20px; }
+.feature h3 { margin: 0 0 6px; font-size: 17px; }
+.feature p { margin: 0; color: var(--muted); font-size: 15px; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.shots img { border-radius: 12px; border: 1px solid var(--rule); }
+
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; }
+.plan { border: 1px solid var(--rule); border-radius: 14px; padding: 24px; }
+.plan.pro { border-color: var(--accent); }
+.plan h3 { margin: 0; font-size: 18px; }
+.price { font-size: 34px; font-weight: 800; margin: 6px 0 12px; }
+.price small { font-size: 16px; font-weight: 500; color: var(--muted); }
+.plan ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.plan li { margin: 4px 0; }
+
+.faq dt { font-weight: 700; margin-top: 18px; }
+.faq dd { margin: 4px 0 0; color: var(--muted); }
+
+footer { border-top: 1px solid var(--rule); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
+
+/* Long-form legal pages */
+.doc { max-width: 720px; padding-top: 24px; padding-bottom: 64px; }
+.doc h1 { font-size: 34px; margin: 0 0 4px; }
+.doc h2 { font-size: 21px; margin: 32px 0 6px; }
+.doc .meta { color: var(--muted); margin: 0 0 24px; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 16px; }
+  .hero h1 { font-size: 36px; }
+  .features, .shots, .pricing { grid-template-columns: 1fr; }
+  .nav nav { gap: 12px; }
+  .nav .wide-only { display: none; }
+  .btn.ghost { margin-left: 4px; }
+}
