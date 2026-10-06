@@ -24,11 +24,10 @@
     <div>
       <h1>Know your <em>real</em> hourly rate.</h1>
       <p>Tasker HQ is a browser extension for people who do AI-training gig work. Track your time across every platform and see what you actually earn per hour, unpaid onboarding and per-task work included.</p>
-      <a class="btn primary" href="download/tasker-hq-0.2.1.xpi" id="firefox-download">Download for Firefox</a>
-      <a class="btn ghost" href="https://chromewebstore.google.com/detail/kpbifjnjhkhnpekfeennogckhpglfkpg">Add to Chrome</a>
-      <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/idcmkdabbgncpgboiajnohilojmdnoie">Add to Edge</a>
-      <p class="note">Firefox: early-access build, signed by Mozilla. Open this page in Firefox and click the button, then choose <strong>Continue to installation</strong> and <strong>Add</strong>.</p>
-      <p class="note" id="not-firefox" hidden>You're not on Firefox, so the Firefox button will just download a file. Use the Chrome or Edge button instead.</p>
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/kpbifjnjhkhnpekfeennogckhpglfkpg" data-browser="chrome">Add to Chrome</a>
+      <a class="btn ghost" href="https://addons.mozilla.org/firefox/addon/tasker-hq/" data-browser="firefox">Add to Firefox</a>
+      <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/idcmkdabbgncpgboiajnohilojmdnoie" data-browser="edge">Add to Edge</a>
+      <p class="note">Free on the Chrome Web Store, Firefox Add-ons and Edge Add-ons. Brave and other Chromium browsers can use the Chrome version.</p>
     </div>
     <img class="popup-shot" src="images/popup-ui.jpg" alt="The Tasker HQ popup with a timer running on a per-task project" width="382" height="705">
   </div>
@@ -108,7 +107,16 @@
   </div>
 </footer>
 <script>
-  if (!/Firefox\//.test(navigator.userAgent)) document.getElementById('not-firefox').hidden = false;
+  // Highlight the button for the visitor's browser.
+  (function () {
+    var ua = navigator.userAgent;
+    var b = /Firefox\//.test(ua) ? 'firefox' : /Edg\//.test(ua) ? 'edge' : 'chrome';
+    document.querySelectorAll('[data-browser]').forEach(function (a) {
+      var match = a.dataset.browser === b;
+      a.classList.toggle('primary', match);
+      a.classList.toggle('ghost', !match);
+    });
+  })();
 </script>
 </body>
 </html>
